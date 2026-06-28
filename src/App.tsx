@@ -1,24 +1,22 @@
-import { Button, Container, Typography } from '@mui/material';
+import { Route, Routes } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
 
 function App() {
   return (
-    <Container sx={{ py: 6 }}>
-      <Typography variant="h2" component="h1" gutterBottom>
-        Aimee Strickland
-      </Typography>
+    <>
+      <Navigation />
 
-      <Typography variant="h5" color="text.secondary" gutterBottom>
-        Integrations Developer
-      </Typography>
-
-      <Typography sx={{ mt: 3, mb: 4 }}>
-        Portfolio site built with React, TypeScript, MUI, and .NET.
-      </Typography>
-
-      <Button variant="contained">
-        View Projects
-      </Button>
-    </Container>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </>
   );
 }
 
